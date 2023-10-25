@@ -50,21 +50,21 @@ class PoleTest extends KernelTestCase
         $this->assertEquals('New test pole', $pole->getPoleNom());
     }
 
-    // public function testPoleCanBeDeleted(): void
-    // {
-    //     $pole = new Pole();
-    //     $pole->setPoleNom('DeletePole');
+    public function testPoleCanBeDeleted(): void
+    {
+        $pole = new Pole();
+        $pole->setPoleNom('DeletePole');
 
-    //     $em = $this->getContainer()->get(EntityManagerInterface::class);
-    //     $em->persist($pole);
-    //     $em->flush();
+        $em = $this->getContainer()->get(EntityManagerInterface::class);
+        $em->persist($pole);
+        $em->flush();
 
-    //     $em->remove($pole);
-    //     $em->flush();
+        $em->remove($pole);
+        $em->flush();
 
-    //     $poleRepository = $em->getRepository(Pole::class);
-    //     $pole = $poleRepository->find(['id' => $pole->getId()]);
+        $poleRepository = $em->getRepository(Pole::class);
+        $pole = $poleRepository->find(['id' => $pole->getId()]);
 
-    //     $this->assertNull($pole);
-    // }
+        $this->assertNull($pole);
+    }
 }

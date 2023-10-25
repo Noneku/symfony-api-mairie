@@ -22,8 +22,8 @@ class IndexPole
     #[ORM\OneToOne(mappedBy: 'urlIndex', cascade: ['persist', 'remove'])]
     private ?RapportActivite $rapportActivite = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?Pole $id_Pole = null;
+    #[ORM\ManyToOne(inversedBy: 'indexPoles')]
+    private ?Pole $Pole = null;
 
     public function getId(): ?int
     {
@@ -71,14 +71,14 @@ class IndexPole
         return $this;
     }
 
-    public function getIdPole(): ?Pole
+    public function getPole(): ?Pole
     {
-        return $this->id_Pole;
+        return $this->Pole;
     }
 
-    public function setIdPole(?Pole $id_Pole): static
+    public function setPole(?Pole $Pole): static
     {
-        $this->id_Pole = $id_Pole;
+        $this->Pole = $Pole;
 
         return $this;
     }
