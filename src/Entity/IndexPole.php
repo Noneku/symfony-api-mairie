@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\IndexPoleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\IndexPoleRepository;
 
 #[ORM\Entity(repositoryClass: IndexPoleRepository::class)]
+#[ApiResource]
 class IndexPole
 {
     #[ORM\Id]

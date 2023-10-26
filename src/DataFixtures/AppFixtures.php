@@ -75,6 +75,7 @@ class AppFixtures extends Fixture
             $pole = new Pole();
             $pole->setPoleNom($key);
             $manager->persist($pole);
+            //FIXTURE ENTITY INDEXPOL
                 foreach ($indexNom as $key => $value) {
                     $index = new IndexPole();
                     $index->setPole($pole);
@@ -83,15 +84,10 @@ class AppFixtures extends Fixture
 
                     $manager->persist($index);
                 }
-
+                //Flush in DataBase IndexPole
                 $manager->flush();
             }
-
+        //Flush in DataBase Pole
         $manager->flush();
-        //FIXTURE ENTITY POLE
-
-        //FIXTURE ENTITY INDEXPOL
-        
-        //FIXTURE ENTITY INDEXPOLE
     }
 }
