@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Pole;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\IndexPoleRepository;
